@@ -3,25 +3,40 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --bg-light: #F9F9F9;
+  --bg-dark: #0A0A0A;
+  --text-main: #1A1A1A;
+  --text-light: #F9F9F9;
+  --accent: #C2A894;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-light);
+  cursor: none; /* Hide default cursor for anti-gravity custom cursor */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+a, button, input {
+  cursor: none; /* Make sure links and buttons also hide default cursor */
+}
+
+/* Lenis smooth scroll recommended styles */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
