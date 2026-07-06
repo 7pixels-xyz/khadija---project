@@ -6,15 +6,14 @@ import Header from "@/components/Header";
 import CustomCursor from "@/components/CustomCursor";
 
 // Load fonts
-import { Italiana, Jost } from "next/font/google";
+import { Bodoni_Moda, Manrope } from "next/font/google";
 
-const italiana = Italiana({
+const bodoni = Bodoni_Moda({
   subsets: ["latin"],
-  weight: ["400"],
   variable: "--font-display",
 });
 
-const jost = Jost({
+const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-sans",
 });
@@ -71,7 +70,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <div className={`${italiana.variable} ${jost.variable} font-sans`}>
+    <div className={`${bodoni.variable} ${manrope.variable} font-sans`}>
       <Preloader />
       <Header />
       <CustomCursor />
