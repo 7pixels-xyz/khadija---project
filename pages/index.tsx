@@ -1,7 +1,11 @@
 import Head from "next/head";
 import Hero from "@/sections/Hero";
+import Narrative from "@/sections/Narrative";
+import Services from "@/sections/Services";
 import About from "@/sections/About";
+import Process from "@/sections/Process";
 import Portfolio from "@/sections/Portfolio";
+import Testimonial from "@/sections/Testimonial";
 import Isometric from "@/sections/Isometric";
 import Products from "@/sections/Products";
 import FAQ from "@/sections/FAQ";
@@ -18,8 +22,12 @@ export default function Home() {
       </Head>
       <main className="w-full relative">
         <Hero />
+        <Narrative />
+        <Services />
         <About />
+        <Process />
         <Portfolio />
+        <Testimonial />
         <Isometric />
         <Products />
         <FAQ />

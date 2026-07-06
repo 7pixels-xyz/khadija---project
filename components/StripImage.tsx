@@ -30,9 +30,9 @@ export default function StripImage({
                 const playAnimation = () => {
                     gsap.to(stripsRef.current, {
                         scaleY: 1,
-                        stagger: 0.05,
-                        duration: 1.5,
-                        ease: "expo.out",
+                        stagger: 0.08,
+                        duration: 2.2, // Premium slow majestic reveal
+                        ease: "expo.inOut",
                     });
                 };
 
@@ -66,7 +66,7 @@ export default function StripImage({
                     ref={(el) => {
                         if (el) stripsRef.current[index] = el;
                     }}
-                    className="h-full relative will-change-transform"
+                    className="h-full relative will-change-transform bg-transparent"
                     style={{
                         width: `${stripWidth}%`,
                         backgroundImage: `url(${src})`,

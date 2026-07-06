@@ -69,12 +69,12 @@ export default function About() {
             </div>
 
             {/* Bio Content */}
-            <div className="relative z-10 max-w-5xl mx-auto text-center">
+            <div className="relative z-10 max-w-5xl mx-auto text-center border-t border-b border-black/[0.08] dark:border-white/[0.08] py-16">
                 <h2 className="font-display text-4xl md:text-5xl lg:text-7xl leading-tight font-medium tracking-tight mb-12">
                     World shaped by experience, space matters more than ever.
                 </h2>
 
-                <div className="max-w-3xl mx-auto text-lg md:text-xl font-sans font-light leading-relaxed text-gray-600">
+                <div className="max-w-3xl mx-auto text-lg md:text-xl font-sans font-light leading-relaxed text-gray-600 dark:text-gray-400">
                     <p className="mb-6">
                         Founded by Khadija Burhani, Urban Nest brings passion and precision to every interior.
                         With a keen eye for detail and a love for blending aesthetics with functionality,

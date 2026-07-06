@@ -6,19 +6,19 @@ const products = [
         id: 1,
         name: "Sofa",
         collection: "129 Collection",
-        image: "/images/product_sofa_1782301430144.png",
+        image: "/images/new_prod_sofa.png",
     },
     {
         id: 2,
         name: "Table",
         collection: "75 Collection",
-        image: "/images/product_table_1782301444778.png",
+        image: "/images/new_prod_table.png",
     },
     {
         id: 3,
         name: "Lamp",
         collection: "219 Collection",
-        image: "/images/product_lamp_1782301468819.png",
+        image: "/images/new_prod_lamp.png",
     },
 ];
 
@@ -27,8 +27,6 @@ export default function Products() {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
     const handleMouseMove = (e: React.MouseEvent) => {
-        // Only track inside the left container approximately, or follow mouse
-        // We can offset it a bit so the image centers on the pointer
         const rect = e.currentTarget.getBoundingClientRect();
         setMousePos({
             x: e.clientX - rect.left,
@@ -58,8 +56,6 @@ export default function Products() {
                                     animate={{
                                         opacity: 1,
                                         scale: 1,
-                                        // Optionally follow mouse by mapping mousePos to x/y if wanted
-                                        // In this case, standard floating image in the center of the left pane
                                         x: mousePos.x / 10,
                                         y: mousePos.y / 10
                                     }}
@@ -101,7 +97,6 @@ export default function Products() {
                             ))}
                         </ul>
                     </div>
-
                 </div>
             </div>
         </section>

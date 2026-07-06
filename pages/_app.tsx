@@ -6,16 +6,17 @@ import Header from "@/components/Header";
 import CustomCursor from "@/components/CustomCursor";
 
 // Load fonts
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Italiana, Jost } from "next/font/google";
 
-const spaceGrotesk = Space_Grotesk({
+const italiana = Italiana({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  weight: ["400"],
+  variable: "--font-display",
 });
 
-const inter = Inter({
+const jost = Jost({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-sans",
 });
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -70,7 +71,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <div className={`${spaceGrotesk.variable} ${inter.variable} font-sans`}>
+    <div className={`${italiana.variable} ${jost.variable} font-sans`}>
       <Preloader />
       <Header />
       <CustomCursor />

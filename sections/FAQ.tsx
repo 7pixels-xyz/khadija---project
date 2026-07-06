@@ -25,24 +25,24 @@ export default function FAQ() {
     };
 
     return (
-        <section className="py-32 px-8 bg-bgLight">
+        <section className="py-20 md:py-32 px-6 md:px-8 bg-bgLight">
             <div className="max-w-4xl mx-auto">
                 <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight mb-16 text-center">
                     Your Question Answered
                 </h2>
 
-                <div className="border-t border-gray-300">
+                <div className="border-t border-black/[0.08] dark:border-white/[0.08]">
                     {faqs.map((faq, index) => (
-                        <div key={index} className="border-b border-gray-300">
+                        <div key={index} className="border-b border-black/[0.08] dark:border-white/[0.08]">
                             <button
-                                className="w-full flex items-center justify-between py-8 text-left group"
+                                className="w-full flex justify-between items-center py-8 text-left group cursor-pointer focus:outline-none"
                                 onClick={() => toggleAccordion(index)}
                             >
-                                <span className="font-display text-2xl md:text-3xl font-medium text-textMain group-hover:text-accent transition-colors">
+                                <span className="font-display text-2xl md:text-3xl font-medium tracking-[-0.01em] text-textMain group-hover:text-accent transition-colors">
                                     {faq.question}
                                 </span>
-                                <span className="ml-4 flex-shrink-0 text-textMain transition-transform duration-300">
-                                    {openIndex === index ? <Minus size={24} /> : <Plus size={24} />}
+                                <span className="ml-8 text-2xl text-accent font-light transition-transform duration-300 transform">
+                                    {openIndex === index ? "−" : "+"}
                                 </span>
                             </button>
 
@@ -52,10 +52,10 @@ export default function FAQ() {
                                         initial={{ height: 0, opacity: 0 }}
                                         animate={{ height: "auto", opacity: 1 }}
                                         exit={{ height: 0, opacity: 0 }}
-                                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                                        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }} // power4.out easing for extra premium feel
                                         className="overflow-hidden"
                                     >
-                                        <div className="pb-8 font-sans text-lg text-gray-600 leading-relaxed pr-12">
+                                        <div className="pb-8 font-sans text-lg text-gray-500 leading-relaxed md:pr-12">
                                             {faq.answer}
                                         </div>
                                     </motion.div>

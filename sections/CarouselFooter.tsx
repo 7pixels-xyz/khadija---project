@@ -2,9 +2,9 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 
 const cards = [
-    { id: 1, title: "Room Design Milenial Layout", image: "/images/carousel_layout_1782301497981.png" },
-    { id: 2, title: "Container For Minimalist Cafe", image: "/images/portfolio_restaurant_1782301401460.png" },
-    { id: 3, title: "Receptionist Design Layout", image: "/images/portfolio_public_1782301417524.png" },
+    { id: 1, title: "Dark Marble Island", image: "/images/new_carous_1.png" },
+    { id: 2, title: "Sophisticated Lobby Space", image: "/images/new_carous_2.png" },
+    { id: 3, title: "Moody Architectural Bathroom", image: "/images/process_soul.png" },
 ];
 
 export default function CarouselFooter() {
@@ -35,9 +35,9 @@ export default function CarouselFooter() {
                             scrollTrigger: {
                                 trigger: containerRef.current,
                                 start: "top top",
-                                end: () => `+=${scrollWrapperRef.current!.scrollWidth}`,
+                                end: () => `+=${scrollWrapperRef.current!.scrollWidth * 0.4}`, // Much faster! Complete the horizontal scroll in 40% the vertical distance
                                 pin: true,
-                                scrub: 1,
+                                scrub: 1.5, // Slightly heavier scrub smoothing for premium feel
                                 invalidateOnRefresh: true,
                             }
                         });
@@ -47,12 +47,14 @@ export default function CarouselFooter() {
         };
 
         // Delay to ensure images load layout
-        const timer = setTimeout(animateCarousel, 100);
+        if (typeof window !== "undefined") {
+            const timer = setTimeout(animateCarousel, 100);
 
-        return () => {
-            clearTimeout(timer);
-            if (ctx) ctx.revert();
-        };
+            return () => {
+                clearTimeout(timer);
+                if (ctx) ctx.revert();
+            };
+        }
     }, []);
 
     return (
@@ -60,8 +62,11 @@ export default function CarouselFooter() {
             <div className="relative w-full">
                 <section ref={containerRef} className="h-auto min-h-[70vh] md:h-screen bg-bgLight pt-24 md:pt-32 pb-16 flex flex-col justify-center overflow-hidden">
                     <div className="px-6 md:px-8 max-w-7xl mx-auto w-full mb-8 md:mb-12 shrink-0">
-                        <h2 className="font-display text-4xl md:text-5xl font-medium tracking-tight">
-                            For Your Own
+                        <h3 className="font-sans uppercase tracking-[0.3em] text-xs font-semibold mb-4 text-accent">
+                            Curated Collections
+                        </h3>
+                        <h2 className="font-display text-5xl md:text-6xl font-medium tracking-tight leading-[1.1]">
+                            Where Style <span className="italic font-light">Meets Function</span>.
                         </h2>
                     </div>
 

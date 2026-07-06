@@ -36,7 +36,9 @@ export default function Portfolio() {
             }, sectionRef);
         };
 
-        animatePortfolio();
+        if (typeof window !== "undefined") {
+            animatePortfolio();
+        }
 
         return () => {
             if (ctx) ctx.revert();
@@ -58,13 +60,13 @@ export default function Portfolio() {
                         <div className="w-full h-full overflow-hidden">
                             <img
                                 ref={(el) => { if (el) imagesRef.current[0] = el; }}
-                                src="/images/portfolio_restaurant_1782301401460.png"
-                                alt="Restaurant"
+                                src="/images/new_port_1.png"
+                                alt="Living Room"
                                 className="w-full h-full object-cover will-change-transform"
                             />
                         </div>
                         <div className="absolute inset-0 bg-black/30 flex items-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            <h3 className="text-white font-display text-3xl font-medium tracking-wide">Restaurant</h3>
+                            <h3 className="text-white font-display text-3xl font-medium tracking-wide">The Retreat</h3>
                         </div>
                     </div>
 
@@ -73,13 +75,13 @@ export default function Portfolio() {
                         <div className="w-full h-full overflow-hidden">
                             <img
                                 ref={(el) => { if (el) imagesRef.current[1] = el; }}
-                                src="/images/portfolio_public_1782301417524.png"
-                                alt="Public Space"
+                                src="/images/new_port_2.png"
+                                alt="Bedroom"
                                 className="w-full h-full object-cover will-change-transform"
                             />
                         </div>
                         <div className="absolute inset-0 bg-black/30 flex items-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            <h3 className="text-white font-display text-3xl font-medium tracking-wide">Public Space</h3>
+                            <h3 className="text-white font-display text-3xl font-medium tracking-wide">Sleeping Quarters</h3>
                         </div>
                     </div>
 

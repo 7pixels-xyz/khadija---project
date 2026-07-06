@@ -47,7 +47,7 @@ export default function Isometric() {
                 <div className="flex-1 relative">
                     <img
                         ref={imageRef}
-                        src="/images/isometric_floor_1782301483922.png"
+                        src="/images/new_iso_floor.png"
                         alt="Isometric Concept"
                         className="w-full max-w-2xl mx-auto object-contain will-change-transform mix-blend-multiply drop-shadow-2xl"
                     />

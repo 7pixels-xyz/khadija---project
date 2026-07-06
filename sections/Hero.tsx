@@ -14,8 +14,8 @@ export default function Hero() {
                 const playAnimation = () => {
                     gsap.fromTo(
                         textRef.current,
-                        { opacity: 0, y: 50 },
-                        { opacity: 1, y: 0, duration: 1.5, ease: "power3.out", delay: 0.5 }
+                        { opacity: 0, y: 60 },
+                        { opacity: 1, y: 0, duration: 2, ease: "power4.out", delay: 1.2 } // Extends delay so it waits for the slower strip reveal
                     );
                 };
 
@@ -35,7 +35,7 @@ export default function Hero() {
         <section id="home" className="relative w-full h-screen overflow-hidden bg-bgLight">
             {/* Strip Image Background */}
             <div className="absolute inset-0 w-full h-full">
-                <StripImage src="/images/hero_interior_1782301388830.png" columns={12} />
+                <StripImage src="/images/hero_premium_luxury.png" columns={12} />
             </div>
 
             {/* Overlay gradient to ensure text readability */}
@@ -44,7 +44,7 @@ export default function Hero() {
             {/* Hero Content */}
             <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 md:px-8 text-center text-white">
                 <div ref={textRef} className="opacity-0">
-                    <h1 className="font-display text-6xl lg:text-[8rem] leading-none uppercase font-bold tracking-tight mix-blend-overlay opacity-90">
+                    <h1 className="font-display text-6xl lg:text-[8rem] leading-none uppercase font-semibold tracking-[-0.02em] mix-blend-overlay opacity-90">
                         Interior Design
                     </h1>
 
